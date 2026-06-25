@@ -12,6 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+
 # Inject Premium Custom CSS Styles
 st.markdown("""
 <style>
@@ -101,7 +102,7 @@ def load_segmentation_model():
     return tf.keras.models.load_model("stroke_unet_model.h5", compile=False)
 
 try:
-    model = load_segmentation_model()
+    model = load_model("stroke_unet_model.h5")
     model_loaded = True
 except Exception as e:
     model_loaded = False
